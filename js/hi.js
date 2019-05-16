@@ -3,6 +3,24 @@ function foo(r) {
   return "foo"
 }
 
+
+function sub(r) {
+  r.subrequest(
+    '/task', {
+      method: 'GET',
+    },
+    function(res) {
+      if (res.status != 200) {
+          r.return(res.status);
+          return;
+      }
+      r.error(res.responseBody)
+      r.return(200, res.responseBody);
+    }
+  )
+
+}
+
 function summary(r) {
   var a, s, h
 
