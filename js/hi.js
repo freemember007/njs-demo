@@ -1,7 +1,7 @@
 function req_jwt_sign(r) {
   r.log("设置请求jwt_token的唯一签名，用于请求限速")
   var req_authorization = r.headersIn.authorization || ''
-  return req_authorization.split('.')[2] || 'no req_jwt_sign'
+  return req_authorization.split('.')[2] || '' //limit_req_zone key为空，将不限速
 }
 
 
