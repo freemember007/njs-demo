@@ -1,0 +1,23 @@
+<!-- 定时打印服务端响应到页面 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test-req-id</title>
+</head>
+<body>
+  <h1>test-req-id</h1>
+  <script type="text/javascript">
+    const testReqId = _ =>
+      fetch('http://ddys-book.diandianys.com/test-req-id')
+        .then(res => res.text())
+        .then(text => {
+            const div = document.createElement("div");
+            div.innerText = text + '\n\n'
+            document.body.appendChild(div)
+        })
+    const timer = setInterval(testReqId, 500)
+    setTimeout(_ => clearInterval(timer), 5000)
+  </script>
+
+</body>
+</html>
