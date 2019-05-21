@@ -8,7 +8,7 @@
   <h1>test-req-id</h1>
   <script type="text/javascript">
     const testReqId = _ =>
-      fetch('http://ddys-book.diandianys.com/test-req-id')
+      fetch('http://localhost:8008/ddysbook/test-req-id')
         .then(res => res.text())
         .then(text => {
             const div = document.createElement("div");

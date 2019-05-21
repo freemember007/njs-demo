@@ -43,7 +43,6 @@ function summary(r) {
       s += "  arg '" + a + "' is '" + r.args[a] + "'\n"
   }
   s += r.requestBody
-  r.error('1111111111111111111')
   return s
 }
 
